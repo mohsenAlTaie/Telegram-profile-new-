@@ -1,3 +1,4 @@
+```markdown
 <div align="center">
 
 # ⏳ Time For Everyone ⏳
@@ -36,13 +37,16 @@ All of it, woven automatically into your name and bio. Set it once — forget it
 # 1. Update & install the essentials
 pkg update -y && pkg upgrade -y
 pkg install python git termux-api -y
+termux-setup-storage   # grant storage access
 ```
 
-> 📌 Also install the **Termux:API** companion app from the *same source* as Termux itself (F-Droid / GitHub), and grant it permissions once opened.
+📌 Also install the Termux:API companion app from the same source as Termux itself (F-Droid / GitHub), and grant it permissions once opened.
 
 ```bash
-# 2. Get the project & install dependencies
-cd ~/storage/downloads/Time-For-Everyone
+# 2. Clone the project & install dependencies
+cd ~/storage/downloads
+git clone https://github.com/mohsenAlTaie/Time-For-Everyone.git
+cd Time-For-Everyone
 pip install -r requirements.txt
 ```
 
@@ -50,57 +54,62 @@ pip install -r requirements.txt
 # 3. Configure your Telegram credentials
 nano config.py
 ```
-Fill in your `API_ID` and `API_HASH` (from **my.telegram.org**), then save (`Ctrl+O`, `Enter`) and exit (`Ctrl+X`).
+
+Fill in your API_ID and API_HASH (from my.telegram.org), then save (Ctrl+O, Enter) and exit (Ctrl+X).
 
 ```bash
 # 4. Launch it
 python main.py
 ```
+
 On first run, you'll be asked for your phone number and the login code Telegram sends you.
 
-### 🔄 Keep it running in the background
+🔄 Keep it running in the background
 
 ```bash
 pkg install tmux -y
 tmux new -s clock
 python main.py
 ```
-Press `Ctrl+B` then `D` to detach — it keeps running even if you close Termux.
-Reattach anytime with `tmux attach -t clock`.
+
+Press Ctrl+B then D to detach — it keeps running even if you close Termux.
+Reattach anytime with tmux attach -t clock.
 
 ---
 
-## 🇮🇶 العربية
+🇮🇶 العربية
 
-**Time For Everyone** يحوّل بروفايلك بتليجرام إلى واجهة حية تتحدث نفسها بنفسها كل دقيقة، بدون أي مجهود منك.
+Time For Everyone يحوّل بروفايلك بتليجرام إلى واجهة حية تتحدث تلقائيًا كل دقيقة، بدون أي مجهود منك.
 
-### ✨ شنو يسوي؟
+✨ شنو يسوي؟
 
-| ✦ | الميزة |
-|---|---|
-| 🕐 | ساعة حية بأرقام عريضة بارزة داخل اسمك الأخير |
-| 👑 | لقب ملكي يتغير حسب وقت اليوم |
-| 🌡️ | حالة الطقس اللحظية لمدينتك |
-| 🔋 | نسبة شحن البطارية وحالتها |
-| 📶 | نوع الاتصال — واي فاي أو بيانات |
-| 🎵 | المقطع الشغال حاليًا من الإشعارات |
-| 🌙 | مرحلة القمر الفلكية الدقيقة |
+✦ الميزة
+🕐 ساعة حية بأرقام عريضة بارزة داخل اسمك الأخير
+👑 لقب ملكي يتغير حسب وقت اليوم
+🌡️ حالة الطقس اللحظية لمدينتك
+🔋 نسبة شحن البطارية وحالتها
+📶 نوع الاتصال — واي فاي أو بيانات
+🎵 المقطع الشغال حاليًا من الإشعارات
+🌙 مرحلة القمر الفلكية الدقيقة
 
 كل هذا ينسج تلقائيًا باسمك ونبذتك. تضبطه مرة وحدة، وتنساه للأبد.
 
-### 🚀 التثبيت (عبر Termux)
+🚀 التثبيت (عبر Termux)
 
 ```bash
 # 1. تحديث وتثبيت الأساسيات
 pkg update -y && pkg upgrade -y
 pkg install python git termux-api -y
+termux-setup-storage   # منح صلاحية الوصول للملفات
 ```
 
-> 📌 نصّب أيضًا تطبيق **Termux:API** من نفس مصدر Termux (F-Droid أو GitHub)، وافتحه مرة وحدة واعطيه الصلاحيات.
+📌 نصّب أيضًا تطبيق Termux:API من نفس مصدر Termux (F-Droid أو GitHub)، وافتحه مرة وحدة واعطيه الصلاحيات.
 
 ```bash
 # 2. جيب المشروع ونصّب المكتبات
-cd ~/storage/downloads/Time-For-Everyone
+cd ~/storage/downloads
+git clone https://github.com/mohsenAlTaie/Time-For-Everyone.git
+cd Time-For-Everyone
 pip install -r requirements.txt
 ```
 
@@ -108,32 +117,35 @@ pip install -r requirements.txt
 # 3. اضبط بياناتك الخاصة بتليجرام
 nano config.py
 ```
-عبّي `API_ID` و `API_HASH` (تحصل عليهم من **my.telegram.org**)، احفظ (`Ctrl+O` ثم `Enter`) واخرج (`Ctrl+X`).
+
+عبّي API_ID و API_HASH (تحصل عليهم من my.telegram.org)، احفظ (Ctrl+O ثم Enter) واخرج (Ctrl+X).
 
 ```bash
 # 4. شغّله
 python main.py
 ```
+
 أول مرة راح يطلب رقم هاتفك وكود الدخول اللي يرسله تليجرام.
 
-### 🔄 خليه شغال بالخلفية دائمًا
+🔄 خليه شغال بالخلفية دائمًا
 
 ```bash
 pkg install tmux -y
 tmux new -s clock
 python main.py
 ```
-اضغط `Ctrl+B` ثم `D` — يضل شغال حتى لو سكرت ترمكس.
-ارجع له وقت ما تريد بأمر: `tmux attach -t clock`
+
+اضغط Ctrl+B ثم D — يضل شغال حتى لو سكرت ترمكس.
+ارجع له وقت ما تريد بأمر: tmux attach -t clock
 
 ---
 
 <div align="center">
 
-### 🌐 Connect
+🌐 Connect
 
-[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@m7jn)
-[![Instagram](https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/z0_28)
+https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube&logoColor=white
+https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white
 
 </div>
 
@@ -141,10 +153,11 @@ python main.py
 
 <div align="center">
 
-⚠️ **This project is licensed and time-locked.** ⚠️
+⚠️ This project is licensed and time-locked. ⚠️
 Unauthorized modification, decryption, or redistribution of the compiled code is strictly prohibited.
 هذا المشروع مرخّص ومربوط بفترة اشتراك محددة — أي تعديل أو فك تشفير أو إعادة توزيع غير مصرح به ممنوع منعًا باتًا.
 
-📩 **Support / التواصل:** Telegram [@K0_MG](https://t.me/K0_MG)
+📩 Support / التواصل: Telegram @K0_MG
 
 </div>
+```
